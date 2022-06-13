@@ -12,8 +12,11 @@ public class ClientePf extends Cliente{
         super(nome, cadastroNacional, new BigDecimal("0"), new BigDecimal("0"));
     }
 
-    public Conta abrirContaPoupanca(Cliente titular, int numero){
-        return new ContaPoupanca(titular, numero);
+    public Conta abrirContaPoupanca(int numero){
+
+        Conta conta = new ContaPoupanca(this, numero);
+        this.adcionarContas(conta);
+        return conta;
     }
 
 
