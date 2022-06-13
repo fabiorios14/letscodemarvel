@@ -28,11 +28,4 @@ public class ContaCorrentePj extends Conta {
         return true;
     }
 
-    @Override
-    public boolean transferir(Conta conta, String valor){
-        this.sacar(valor);
-        conta.depositar(valor);
-        return true;
-    }
-
 }
