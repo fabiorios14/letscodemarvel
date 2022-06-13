@@ -1,7 +1,6 @@
 package cliente;
 
 import conta.Conta;
-import conta.ContaCorrente;
 import conta.ContaPoupanca;
 
 public class ClientePf extends Cliente{

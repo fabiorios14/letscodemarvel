@@ -1,7 +1,5 @@
 package cliente;
 
-import conta.Conta;
-import conta.ContaCorrente;
 
 public class ClientePj extends Cliente {
 

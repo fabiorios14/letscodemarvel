@@ -1,7 +1,6 @@
 package conta;
 
 import java.math.BigDecimal;
-import java.math.MathContext;
 
 import cliente.Cliente;
 
