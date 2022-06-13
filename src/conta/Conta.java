@@ -41,7 +41,9 @@ public class Conta{
     }
 
     public boolean sacar(String valor){
-        this.setSaldo(this.getSaldo().subtract(new BigDecimal(valor)));
+        BigDecimal taxaAplicada = this.titular.getTaxaTarifa().add(new BigDecimal("1"));
+        BigDecimal novoValor = new BigDecimal(valor).multiply(taxaAplicada);
+        this.setSaldo(this.getSaldo().subtract(novoValor));
         return true;
     }
 

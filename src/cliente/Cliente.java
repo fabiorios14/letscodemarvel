@@ -1,32 +1,46 @@
 package cliente;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
 import conta.Conta;
 import conta.ContaCorrente;
+import conta.ContaInvestimento;
 
 
 public abstract class Cliente {
     
     private String nome;
     private String cadastroNacional;
+    private BigDecimal taxaTarifa;
+    private BigDecimal taxaInvestimento;
     private List<Conta> contas = new ArrayList<Conta>();
 
-    public Cliente(String nome, String cadastroNacional){
+    public Cliente(String nome, String cadastroNacional, BigDecimal taxaTarifa, BigDecimal taxaInvestimento){
         this.nome = nome;
         this.cadastroNacional = cadastroNacional;
+        this.taxaTarifa = taxaTarifa;
+        this.taxaInvestimento = taxaInvestimento;
     }
 
+    public BigDecimal getTaxaTarifa() {
+        return this.taxaTarifa;
+    }
+
+    public BigDecimal getTaxaInvestimento() {
+        return this.taxaInvestimento;
+    }
 
     public Conta abrirContaCorrente(int numero) {
-        Conta contaCorrente = new ContaCorrente(this, numero);
-        this.adcionarContas(contaCorrente);
-        return contaCorrente;
+        Conta conta = new ContaCorrente(this, numero);
+        this.adcionarContas(conta);
+        return conta;
     }
 
-    public Conta abrirContaInvestimento() {
-        // TODO Auto-generated method stub
-        return null;
+    public Conta abrirContaInvestimento(int numero) {
+        Conta conta = new ContaInvestimento(this, numero);
+        this.adcionarContas(conta);
+        return conta;
     }
 
     public void adcionarContas(Conta conta){

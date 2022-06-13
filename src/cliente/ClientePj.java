@@ -1,21 +1,11 @@
 package cliente;
 
-import conta.Conta;
-import conta.ContaCorrentePj;
+import java.math.BigDecimal;
 
 public class ClientePj extends Cliente {
 
     public ClientePj(String nome, String cadastroNacional) {
-        super(nome, cadastroNacional);
+        super(nome, cadastroNacional, new BigDecimal("0.005"), new BigDecimal("0.02"));
     }
 
-
-    public Conta abrirContaCorrentePj(int numero) {
-        Conta contaCorrentePj = new ContaCorrentePj(this, numero);
-        this.adcionarContas(contaCorrentePj);
-        return contaCorrentePj;
-    }
-
-
-    
 }
