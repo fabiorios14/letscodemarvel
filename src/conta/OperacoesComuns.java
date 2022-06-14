@@ -1,7 +1,5 @@
 package conta;
 
-import java.math.BigDecimal;
-
 public interface OperacoesComuns {
     
     public void sacar(String valor) throws Exception;
