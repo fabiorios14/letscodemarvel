@@ -1,6 +1,8 @@
 import cliente.ClientePf;
 import cliente.ClientePj;
-import conta.Conta;
+import conta.ContaCorrente;
+import conta.ContaInvestimento;
+import conta.ContaPoupanca;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -10,15 +12,15 @@ public class App {
 
         cpf1.abrirContaCorrente(1);
         cpf2.abrirContaCorrente(2);
-        Conta conta1 = cpf1.buscarConta(1);
-        Conta conta2 = cpf2.buscarConta(2);
+        ContaCorrente conta1 = (ContaCorrente) cpf1.buscarConta(1);
+        ContaCorrente conta2 = (ContaCorrente) cpf2.buscarConta(2);
 
         conta1.depositar("10");
         conta1.sacar("1");
         conta1.transferir(conta2, "4");
 
         cpf1.abrirContaPoupanca(3);
-        Conta conta3 = cpf1.buscarConta(3);
+        ContaPoupanca conta3 = (ContaPoupanca) cpf1.buscarConta(3);
         conta3.depositar("200.00");
 
         ClientePj cpj1 = new ClientePj("João LTDA", "002");
@@ -26,8 +28,8 @@ public class App {
 
         cpj1.abrirContaCorrente(4);
         cpj2.abrirContaCorrente(5);
-        Conta conta4 = cpj1.buscarConta(4);
-        Conta conta5 = cpj2.buscarConta(5);
+        ContaCorrente conta4 = (ContaCorrente) cpj1.buscarConta(4);
+        ContaCorrente conta5 = (ContaCorrente) cpj2.buscarConta(5);
 
         conta4.depositar("1000");
         conta4.sacar("100");
@@ -35,11 +37,11 @@ public class App {
 
         cpf1.abrirContaInvestimento(6);
         cpj1.abrirContaInvestimento(7);
-        Conta conta6 = cpf1.buscarConta(6);
-        Conta conta7 = cpj1.buscarConta(7);
+        ContaInvestimento conta6 = (ContaInvestimento) cpf1.buscarConta(6);
+        ContaInvestimento conta7 = (ContaInvestimento) cpj1.buscarConta(7);
 
-        conta6.depositar("1000");
-        conta7.depositar("1000");
+        conta6.investir("1000");
+        conta7.investir("1000");
 
         System.out.println("Conta Corrente PF do(a) " + conta1.getTitular().getNome() + ": " + conta1.getNumero() + " Saldo: " + conta1.consultarSaldo());
         System.out.println("Conta Corrente PF do(a) " + conta2.getTitular().getNome() + ": " + conta2.getNumero() + " Saldo: " + conta2.consultarSaldo());

@@ -26,7 +26,7 @@ public abstract class Cliente {
     public String getNome() {
         return nome;
     }
-    
+
     public BigDecimal getTaxaTarifa() {
         return this.taxaTarifa;
     }
