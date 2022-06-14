@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 import cliente.Cliente;
 
-public class Conta {
+public class Conta implements Operacoes{
 
     private BigDecimal saldo;
     private int numero;
@@ -28,25 +28,23 @@ public class Conta {
         return saldo;
     }
 
-    public void setSaldo(BigDecimal saldo) {
-        // verificar se o número não é negativo
-        this.saldo = saldo;
-    }
-
     public int getNumero() {
         return numero;
     }
 
+
+    @Override
     public void depositar(String valor) throws Exception {
 
         BigDecimal valorEmNumero = new BigDecimal(valor);
         if (valorEmNumero.doubleValue() < 0) {
             throw new Exception("Valor não pode ser negativo");
         }
-        this.setSaldo(this.getSaldo().add(valorEmNumero));
+        this.saldo = this.saldo.add(valorEmNumero);
 
     }
 
+    @Override
     public void sacar(String valor) throws Exception {
         BigDecimal taxaAplicada = this.titular.getTaxaTarifa().add(new BigDecimal("1"));
         BigDecimal novoValor = new BigDecimal(valor).multiply(taxaAplicada);
@@ -58,15 +56,12 @@ public class Conta {
         if( this.getSaldo().doubleValue() < novoValor.doubleValue()){
             throw new Exception("Saldo insuficiente");
         }
-        this.setSaldo(this.getSaldo().subtract(novoValor));
+        this.saldo = this.getSaldo().subtract(novoValor);
     }
 
-    public String consultarSaldo() {
-        return this.getSaldo().toString();
-    }
-
+    
+    @Override
     public void transferir(Conta conta, String valor) throws Exception {
-        
         try {
             this.sacar(valor);
             conta.depositar(valor);
@@ -74,5 +69,10 @@ public class Conta {
             throw new Exception(e.getMessage());
         }
     }
-
+    
+    @Override
+    public String consultarSaldo() {
+        return this.getSaldo().toString();
+    }
+    
 }
