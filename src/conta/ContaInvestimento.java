@@ -16,4 +16,8 @@ public class ContaInvestimento extends Conta {
         return this.getSaldo().multiply(taxaAplicada).toString();
     }
 
+    public void investir(String valor){
+        this.setSaldo(this.getSaldo().add(new BigDecimal(valor)));
+    }
+    
 }

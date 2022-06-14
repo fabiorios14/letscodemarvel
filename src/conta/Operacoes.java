@@ -1,11 +1,13 @@
-package conta;
+// package conta;
 
-public interface Operacoes {
+// import java.math.BigDecimal;
+
+// public interface Operacoes {
     
-    //public void sacar(BigDecimal valor);
-    //public void depositar(String valor);
-    //public void transferência(int valor, Conta conta);
-    //public void investir(int valor);
-    //public String consultarSaldo();
+//     public void sacar(String valor);
+//     public void depositar(String valor);
+//     public void transferência(String valor, Conta conta);
+//     public void investir(String valor);
+//     public String consultarSaldo();
 
-}
+// }

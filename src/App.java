@@ -21,8 +21,8 @@ public class App {
         Conta conta3 = cpf1.buscarConta(3);
         conta3.depositar("200.00");
 
-        ClientePj cpj1 = new ClientePj("João", "000");
-        ClientePj cpj2 = new ClientePj("Fabio", "001");
+        ClientePj cpj1 = new ClientePj("João LTDA", "002");
+        ClientePj cpj2 = new ClientePj("Fabio LTDA", "003");
 
         cpj1.abrirContaCorrente(4);
         cpj2.abrirContaCorrente(5);
@@ -41,13 +41,13 @@ public class App {
         conta6.depositar("1000");
         conta7.depositar("1000");
 
-        System.out.println("Conta Corrente PF: " + conta1.getNumero() + " Saldo: " + conta1.consultarSaldo());
-        System.out.println("Conta Corrente PF: " + conta2.getNumero() + " Saldo: " + conta2.consultarSaldo());
-        System.out.println("Conta Poupança PF: " + conta3.getNumero() + " Saldo: " + conta3.consultarSaldo());
-        System.out.println("Conta Corrente PJ: " + conta4.getNumero() + " Saldo: " + conta4.consultarSaldo());
-        System.out.println("Conta Corrente PJ: " + conta5.getNumero() + " Saldo: " + conta5.consultarSaldo());
-        System.out.println("Conta Investimento PF: " + conta6.getNumero() + " Saldo: " + conta6.consultarSaldo());
-        System.out.println("Conta Investimento PJ: " + conta7.getNumero() + " Saldo: " + conta7.consultarSaldo());
+        System.out.println("Conta Corrente PF do(a) " + conta1.getTitular().getNome() + ": " + conta1.getNumero() + " Saldo: " + conta1.consultarSaldo());
+        System.out.println("Conta Corrente PF do(a) " + conta2.getTitular().getNome() + ": " + conta2.getNumero() + " Saldo: " + conta2.consultarSaldo());
+        System.out.println("Conta Poupança PF do(a) " + conta3.getTitular().getNome() + ": " + conta3.getNumero() + " Saldo: " + conta3.consultarSaldo());
+        System.out.println("Conta Corrente PJ do(a) " + conta4.getTitular().getNome() + ": " + conta4.getNumero() + " Saldo: " + conta4.consultarSaldo());
+        System.out.println("Conta Corrente PJ do(a) " + conta5.getTitular().getNome() + ": " + conta5.getNumero() + " Saldo: " + conta5.consultarSaldo());
+        System.out.println("Conta Investimento PF do(a) " + conta6.getTitular().getNome() + ": " + conta6.getNumero() + " Saldo: " + conta6.consultarSaldo());
+        System.out.println("Conta Investimento PJ do(a) " + conta7.getTitular().getNome() + ": " + conta7.getNumero() + " Saldo: " + conta7.consultarSaldo());
 
     }
 }

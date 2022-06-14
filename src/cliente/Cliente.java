@@ -23,6 +23,10 @@ public abstract class Cliente {
         this.taxaInvestimento = taxaInvestimento;
     }
 
+    public String getNome() {
+        return nome;
+    }
+    
     public BigDecimal getTaxaTarifa() {
         return this.taxaTarifa;
     }
