@@ -1,7 +1,6 @@
 package conta;
 
 import java.math.BigDecimal;
-
 import cliente.Cliente;
 
 public class ContaInvestimento extends Conta {
@@ -16,8 +15,8 @@ public class ContaInvestimento extends Conta {
         return this.getSaldo().multiply(taxaAplicada).toString();
     }
 
-    public void investir(String valor){
-        this.setSaldo(this.getSaldo().add(new BigDecimal(valor)));
+    public void investir(String valor) throws Exception{
+        this.depositar(this.getSaldo().add(new BigDecimal(valor)).toString());
     }
     
 }
