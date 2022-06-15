@@ -18,16 +18,4 @@ public class ClientePf extends Cliente{
         return conta;
     }
 
-    @Override
-    public BigDecimal getTaxaSaque() {
-        // TODO Auto-generated method stub
-        return new BigDecimal("0.0");
-    }
-
-    @Override
-    public BigDecimal getTaxaInvestimento() {
-        // TODO Auto-generated method stub
-        return new BigDecimal("0.0");
-    }
-
 }
