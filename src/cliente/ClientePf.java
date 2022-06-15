@@ -1,7 +1,5 @@
 package cliente;
 
-import java.math.BigDecimal;
-
 import conta.Conta;
 import conta.ContaPoupanca;
 
