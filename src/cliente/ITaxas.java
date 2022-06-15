@@ -2,6 +2,7 @@ package cliente;
 
 import java.math.BigDecimal;
 
-public interface IInvestimento {
+public interface ITaxas {
     BigDecimal getTaxaInvestimento();
+    BigDecimal getTaxaSaque();
 }

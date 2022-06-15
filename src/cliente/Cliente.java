@@ -7,7 +7,7 @@ import conta.ContaCorrente;
 import conta.ContaInvestimento;
 
 
-public abstract class Cliente implements ITarifas, IInvestimento{
+public abstract class Cliente implements ITaxas{
     
     private String nome;
     private String cadastroNacional;
