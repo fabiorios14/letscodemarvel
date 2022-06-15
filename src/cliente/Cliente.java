@@ -1,5 +1,4 @@
 package cliente;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,33 +7,21 @@ import conta.ContaCorrente;
 import conta.ContaInvestimento;
 
 
-public abstract class Cliente {
+public abstract class Cliente implements ITarifas, IInvestimento{
     
     private String nome;
     private String cadastroNacional;
-    private BigDecimal taxaTarifa;
-    private BigDecimal taxaInvestimento;
     private List<Conta> contas = new ArrayList<Conta>();
 
-    public Cliente(String nome, String cadastroNacional, BigDecimal taxaTarifa, BigDecimal taxaInvestimento){
+    public Cliente(String nome, String cadastroNacional){
         this.nome = nome;
         this.cadastroNacional = cadastroNacional;
-        this.taxaTarifa = taxaTarifa;
-        this.taxaInvestimento = taxaInvestimento;
     }
 
     public String getNome() {
         return nome;
     }
     
-    public BigDecimal getTaxaTarifa() {
-        return this.taxaTarifa;
-    }
-
-    public BigDecimal getTaxaInvestimento() {
-        return this.taxaInvestimento;
-    }
-
     public Conta abrirContaCorrente(int numero) {
         Conta conta = new ContaCorrente(this, numero);
         this.adcionarContas(conta);

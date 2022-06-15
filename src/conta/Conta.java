@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 import cliente.Cliente;
 
-public class Conta implements Operacoes{
+public abstract class Conta implements IOperacoes{
 
     private BigDecimal saldo;
     private int numero;
@@ -46,7 +46,7 @@ public class Conta implements Operacoes{
 
     @Override
     public void sacar(String valor) throws Exception {
-        BigDecimal taxaAplicada = this.titular.getTaxaTarifa().add(new BigDecimal("1"));
+        BigDecimal taxaAplicada = this.titular.getTaxaSaque().add(new BigDecimal("1"));
         BigDecimal novoValor = new BigDecimal(valor).multiply(taxaAplicada);
 
         if (novoValor.doubleValue() < 0) {
