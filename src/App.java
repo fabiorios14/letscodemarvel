@@ -49,5 +49,6 @@ public class App {
         System.out.println("Conta Investimento PF do(a) " + conta6.getTitular().getNome() + ": " + conta6.getNumero() + " Saldo: " + conta6.consultarSaldo());
         System.out.println("Conta Investimento PJ do(a) " + conta7.getTitular().getNome() + ": " + conta7.getNumero() + " Saldo: " + conta7.consultarSaldo());
 
+        
     }
 }
